@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://dm00y8w3enuy4"]
+
+[ext_resource type="Texture2D" uid="uid://divuderbkjuw1" path="res://Assets/Slimes/SmallSlime_Violet.png" id="1_ophk0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ramyn"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_drlyc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SmallSlimeViolet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_uoqcw"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../SmallSlimeViolet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_guwyb"]
+_data = {
+"RESET": SubResource("Animation_drlyc"),
+"idle": SubResource("Animation_uoqcw")
+}
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="SmallSlimeViolet" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+scale = Vector2(0.132661, 0.132661)
+texture = ExtResource("1_ophk0")
+hframes = 4
+vframes = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ramyn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CollisionShape2D")
+libraries = {
+"": SubResource("AnimationLibrary_guwyb")
+}
+autoplay = "idle"
