@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://nist1jwtj2yl"]
+
+[ext_resource type="Texture2D" uid="uid://ce42o4oepvkb8" path="res://Assets/coollogo_com-20953150.png" id="1_s1ifr"]
+[ext_resource type="Texture2D" uid="uid://ck4d26eqwn47a" path="res://Assets/coollogo_com-31781224.png" id="2_785eo"]
+[ext_resource type="Texture2D" uid="uid://dh2am745tcbfh" path="res://Assets/coollogo_com-97092051.png" id="3_k7ajl"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -332.0
+offset_top = -262.0
+offset_right = 336.0
+offset_bottom = 259.0
+color = Color(0, 0, 0, 0.341176)
+
+[node name="CoollogoCom-20953150" type="Sprite2D" parent="."]
+position = Vector2(-4, 0)
+scale = Vector2(0.379687, 0.379687)
+texture = ExtResource("1_s1ifr")
+
+[node name="CoollogoCom-31781224" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-190, 350)
+texture = ExtResource("2_785eo")
+
+[node name="CoollogoCom-97092051" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-241, 520)
+texture = ExtResource("3_k7ajl")
