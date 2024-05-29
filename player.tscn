@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dx5e80uq42i3"]
 
-[ext_resource type="Script" path="res://Assets/Background/player.gd" id="1_2l6oj"]
+[ext_resource type="Script" path="res://sprites/player.gd" id="1_6w3m0"]
 [ext_resource type="Texture2D" uid="uid://xre24knppyuv" path="res://Assets/Slimes/I might cry i u DONT WORK PLSSSSSS WORK.png" id="2_uo6rc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pppit"]
@@ -23,7 +23,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_sq8bg"]
 resource_name = "die"
-length = 0.4
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -98,7 +98,7 @@ _data = {
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_2l6oj")
+script = ExtResource("1_6w3m0")
 
 [node name="IMightCryIUDontWorkPlssssssWork" type="Sprite2D" parent="."]
 position = Vector2(68.3972, 552.5)
@@ -109,13 +109,14 @@ vframes = 7
 frame = 24
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(69, 561)
+position = Vector2(69, 559)
 shape = SubResource("CircleShape2D_pppit")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(69.25, 555.75)
 scale = Vector2(0.108065, 0.108065)
 zoom = Vector2(5, 5)
+position_smoothing_enabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
