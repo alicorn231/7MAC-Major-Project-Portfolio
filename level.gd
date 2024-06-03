@@ -1,12 +1,17 @@
 extends Node2D
 #
+#@onready var gos = $UILayer/GameOverScrean
+#var player = null
 #@export var level_start_pos: Node2D
 #spawn point
 ## Called when the node enters the scene tree for the first time.
-#func _ready():
-	#pass # Replace with function body.
+func _ready():
+	pass
 #
 #
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 	#pass
+	
+func _on_player_killed():
+	get_tree().change_scene("res://sprites/you_died_screen.tscn")
