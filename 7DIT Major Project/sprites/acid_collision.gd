@@ -25,4 +25,5 @@ func _on_body_entered(body):
 		print("body die")
 		get_tree().paused
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://sprites/you_died_screen.tscn")
+		if body.is_inside_tree():
+			get_tree().change_scene_to_file("res://sprites/you_died_screen.tscn")
