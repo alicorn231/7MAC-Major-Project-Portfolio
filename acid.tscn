@@ -1,21 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cj34iql14577"]
+[gd_scene load_steps=3 format=3 uid="uid://etpuu6ov74q6"]
 
-[ext_resource type="Script" path="res://sprites/acid.gd" id="1_7w20s"]
+[ext_resource type="Script" path="res://sprites/acid_collision.gd" id="1_xqxa4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mypke"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhmm5"]
+size = Vector2(514, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdhju"]
-size = Vector2(556, 30.5)
-
-[node name="StaticBody2D" type="StaticBody2D"]
-script = ExtResource("1_7w20s")
+[node name="acid_collision" type="Area2D"]
+script = ExtResource("1_xqxa4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_mypke")
+shape = SubResource("RectangleShape2D_uhmm5")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_bdhju")
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
