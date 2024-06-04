@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceb6meviwfhce"]
+
+[ext_resource type="Script" path="res://sprites/you_won_screen.gd" id="1_cmbo4"]
+[ext_resource type="Texture2D" uid="uid://bi4odbyo76ru1" path="res://Assets/Test/coollogo_com-31781224.png" id="2_kmouj"]
+
+[node name="you_died" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -160.0
+offset_right = -96.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cmbo4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.082
+anchor_top = 0.256
+anchor_right = 0.082
+anchor_bottom = 0.256
+offset_left = -2207.46
+offset_top = -1111.89
+offset_right = 3260.54
+offset_bottom = 2024.11
+color = Color(0, 0, 0, 0.454902)
+
+[node name="done" type="Button" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 676.0
+offset_right = 866.0
+offset_bottom = 788.0
+theme_override_font_sizes/font_size = 70
+text = "Restart"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(680, 520)
+
+[node name="CoollogoCom-31781224" type="Sprite2D" parent="."]
+position = Vector2(679, 476)
+scale = Vector2(2.95, 2.95)
+texture = ExtResource("2_kmouj")
+
+[connection signal="pressed" from="done" to="." method="_on_done_pressed"]

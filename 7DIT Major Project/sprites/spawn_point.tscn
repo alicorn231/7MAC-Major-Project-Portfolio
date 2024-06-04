@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu10hnocvndlc"]
+
+[ext_resource type="Script" path="res://sprites/spawn_point.gd" id="1_a4k4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38myk"]
+size = Vector2(16, 14)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_a4k4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_38myk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
