@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyjutptvj3503"
-path="res://.godot/imported/Background_2.png-df57d948e46268ddb8a68c891fe2bdfd.ctex"
+uid="uid://bhxll31hnooa1"
+path="res://.godot/imported/PurpleSlime.png-68f6e235f6e84d2d38387afd550db07d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/Background_2.png"
-dest_files=["res://.godot/imported/Background_2.png-df57d948e46268ddb8a68c891fe2bdfd.ctex"]
+source_file="res://Assets/Slimes/PurpleSlime.png"
+dest_files=["res://.godot/imported/PurpleSlime.png-68f6e235f6e84d2d38387afd550db07d.ctex"]
 
 [params]
 

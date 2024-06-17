@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyjutptvj3503"
-path="res://.godot/imported/Background_2.png-df57d948e46268ddb8a68c891fe2bdfd.ctex"
+uid="uid://dl24g3gl3yykf"
+path="res://.godot/imported/you_died-text.png-d099f2ed54fd8c4ea2bc41492cdabe46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/Background_2.png"
-dest_files=["res://.godot/imported/Background_2.png-df57d948e46268ddb8a68c891fe2bdfd.ctex"]
+source_file="res://Assets/text/you_died-text.png"
+dest_files=["res://.godot/imported/you_died-text.png-d099f2ed54fd8c4ea2bc41492cdabe46.ctex"]
 
 [params]
 

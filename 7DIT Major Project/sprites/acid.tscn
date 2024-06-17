@@ -1,12 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://etpuu6ov74q6"]
+[gd_scene load_steps=3 format=3 uid="uid://bvksvie5j2do7"]
 
-[ext_resource type="Script" path="res://sprites/acid_collision.gd" id="1_xqxa4"]
+[sub_resource type="GDScript" id="GDScript_3lw04"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+	
+
+
+
+func _on_body_entered(body):
+	print(\"body dieing yayyy\")
+	if body.name == \"player\":
+		print(\"player has died\")
+		##you_died_screen.reveal()
+		#await get_tree().create_timer(0.4).timeout
+		#print(\".4\")
+		await get_tree().create_timer(0.1).timeout
+		body.die()
+		print(\"body die\")
+		get_tree().paused
+		await get_tree().create_timer(1).timeout
+		if body.is_inside_tree():
+			get_tree().change_scene_to_file(\"res://sprites/screans/you_died_screen.tscn\")
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhmm5"]
 size = Vector2(514, 20)
 
 [node name="acid_collision" type="Area2D"]
-script = ExtResource("1_xqxa4")
+script = SubResource("GDScript_3lw04")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_uhmm5")

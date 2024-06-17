@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://t8o57bkqbhsl"]
+[gd_scene load_steps=12 format=3 uid="uid://bt07j46g0yp7i"]
 
 [ext_resource type="Script" path="res://sprites/scripts/player.gd" id="1_6w3m0"]
 [ext_resource type="Texture2D" uid="uid://bhxll31hnooa1" path="res://Assets/Slimes/PurpleSlime.png" id="2_40lnm"]
@@ -18,6 +18,11 @@ tracks/0/keys = {
 "update": 1,
 "values": [8]
 }
+
+[sub_resource type="Animation" id="Animation_5hunk"]
+resource_name = "bleep bloop"
+length = 0.4
+loop_mode = 1
 
 [sub_resource type="Animation" id="Animation_3bgyx"]
 resource_name = "die"
@@ -90,6 +95,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5m6br"]
 _data = {
 "RESET": SubResource("Animation_pl0vl"),
+"bleep bloop": SubResource("Animation_5hunk"),
 "die": SubResource("Animation_3bgyx"),
 "idle": SubResource("Animation_2jgmo"),
 "walk left": SubResource("Animation_0lfay"),

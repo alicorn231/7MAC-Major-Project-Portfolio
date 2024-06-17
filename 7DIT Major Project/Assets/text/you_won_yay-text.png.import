@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyjutptvj3503"
-path="res://.godot/imported/Background_2.png-df57d948e46268ddb8a68c891fe2bdfd.ctex"
+uid="uid://ddaono5rhmcad"
+path="res://.godot/imported/you_won_yay-text.png-8ab88c0971cf7643bed57ebc7e7ffb2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/Background_2.png"
-dest_files=["res://.godot/imported/Background_2.png-df57d948e46268ddb8a68c891fe2bdfd.ctex"]
+source_file="res://Assets/text/you_won_yay-text.png"
+dest_files=["res://.godot/imported/you_won_yay-text.png-8ab88c0971cf7643bed57ebc7e7ffb2a.ctex"]
 
 [params]
 
