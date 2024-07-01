@@ -1,0 +1,138 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddeq2sww1pv47"]
+
+[ext_resource type="Script" path="res://sprites/scripts/player.gd" id="1_vpon7"]
+[ext_resource type="Texture2D" uid="uid://cvj7f88hf618a" path="res://Assets/Slimes/PinkSlime.png" id="2_d8krj"]
+[ext_resource type="PackedScene" uid="uid://wskj872e2n7x" path="res://sprites/screans/you_died_screen.tscn" id="3_v6ikw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vc7kf"]
+size = Vector2(11.5, 11)
+
+[sub_resource type="Animation" id="Animation_2q44m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PinkSlime2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_2ci24"]
+resource_name = "walk left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PinkSlime2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_ifleb"]
+resource_name = "walk right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PinkSlime2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_47bno"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PinkSlime2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_0d10u"]
+resource_name = "die"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PinkSlime2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gudjn"]
+_data = {
+"RESET": SubResource("Animation_2q44m"),
+"die": SubResource("Animation_0d10u"),
+"idle": SubResource("Animation_47bno"),
+"walk left": SubResource("Animation_2ci24"),
+"walk right": SubResource("Animation_ifleb")
+}
+
+[node name="pink_player_tscn" type="CharacterBody2D"]
+script = ExtResource("1_vpon7")
+
+[node name="PinkSlime" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-0.217041, -7.90155)
+scale = Vector2(0.178364, 0.178364)
+texture = ExtResource("2_d8krj")
+hframes = 4
+vframes = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vc7kf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.108065, 0.108065)
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="you_died_screen" parent="." instance=ExtResource("3_v6ikw")]
+visible = false
+offset_left = 79.0
+offset_top = 551.0
+offset_right = 79.0
+offset_bottom = 551.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gudjn")
+}
+
+[node name="PinkSlime2" type="Sprite2D" parent="."]
+position = Vector2(-2, -7)
+scale = Vector2(0.167593, 0.167593)
+texture = ExtResource("2_d8krj")
+hframes = 4
+vframes = 7

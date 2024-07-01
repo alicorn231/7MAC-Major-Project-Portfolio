@@ -23,10 +23,10 @@ anchor_left = 0.082
 anchor_top = 0.256
 anchor_right = 0.082
 anchor_bottom = 0.256
-offset_left = -1859.46
-offset_top = -1274.89
-offset_right = 3608.54
-offset_bottom = 1861.11
+offset_left = -1505.46
+offset_top = -1276.89
+offset_right = 3962.54
+offset_bottom = 1859.11
 color = Color(0, 0, 0, 0.454902)
 
 [node name="startButton" type="Button" parent="."]
@@ -38,14 +38,27 @@ offset_bottom = 813.0
 theme_override_font_sizes/font_size = 70
 text = "Start"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(680, 520)
-scale = Vector2(46.6155, 255.402)
-editor_draw_limits = true
+[node name="colour" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1396.0
+offset_top = 898.0
+offset_right = 1816.0
+offset_bottom = 1098.0
+scale = Vector2(1.09534, 1.16266)
+theme_override_font_sizes/font_size = 60
+text = "choose your 
+player"
 
 [node name="SlimeGame-text" type="Sprite2D" parent="."]
-position = Vector2(686, 517)
-scale = Vector2(1.8875, 1.8875)
+position = Vector2(690, 479)
+scale = Vector2(3.0475, 3.0475)
 texture = ExtResource("2_uorfp")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(748, 518)
+scale = Vector2(1426.61, 2133.44)
+zoom = Vector2(0.5, 0.5)
+editor_draw_limits = true
+
 [connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="colour" to="." method="_on_colour_pressed"]

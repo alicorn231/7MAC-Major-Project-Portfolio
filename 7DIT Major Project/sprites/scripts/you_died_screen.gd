@@ -1,22 +1,26 @@
 extends Control
 
+#@onready you_died.visible = false
 
-# Called when the node enters the scene tree for the first time.
+#func _on_give_up_pressed():
+	#get_tree().change_scene_to_file("res://sprites/screans/home_screan.tscn")
+	#pass # Replace with function body.
 func _ready():
-	pass # Replace with function body.
+	if Input.is_action_just_pressed("space"):
+		var player = get_parent()
+		player.respawn()
+		
+	
 
+func _on_give_up_pressed():
+	get_tree().change_scene_to_file("res://sprites/screans/map.tscn")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_restart_button_pressed():
-	get_tree().change_scene_to_file("res://Levels/tscn/level_1.tscn")
+	var player = get_parent()
+	player.respawn()
+	
+	
 
-
-func _on_give_up_pressed():
-	get_tree().change_scene_to_file("res://sprites/screans/home_screan.tscn")
-	pass # Replace with function body.
-
-
+	
