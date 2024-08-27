@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bps3vmmaxgwkm"
+path="res://.godot/imported/mixkit-video-game-retro-click-237.mp3-6c0dcd3852339ca51a277f8bc7b74a2a.mp3str"
+
+[deps]
+
+source_file="res://Assets/folley effects/mixkit-video-game-retro-click-237.mp3"
+dest_files=["res://.godot/imported/mixkit-video-game-retro-click-237.mp3-6c0dcd3852339ca51a277f8bc7b74a2a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5kn0bhaxw7u5"
+path="res://.godot/imported/mixkit-player-jumping-in-a-video-game-2043.mp3-8f57687154836649e2d39a5efc0472aa.mp3str"
+
+[deps]
+
+source_file="res://Assets/folley effects/mixkit-player-jumping-in-a-video-game-2043.mp3"
+dest_files=["res://.godot/imported/mixkit-player-jumping-in-a-video-game-2043.mp3-8f57687154836649e2d39a5efc0472aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

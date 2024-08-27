@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0sa2i3w4rkx2"
+path="res://.godot/imported/mixkit-bonus-earned-in-video-game-2058.mp3-589a9d9f7e8a4d26a4e557eceb990ed0.mp3str"
+
+[deps]
+
+source_file="res://Assets/folley effects/mixkit-bonus-earned-in-video-game-2058.mp3"
+dest_files=["res://.godot/imported/mixkit-bonus-earned-in-video-game-2058.mp3-589a9d9f7e8a4d26a4e557eceb990ed0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
