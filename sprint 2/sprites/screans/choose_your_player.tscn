@@ -1,0 +1,325 @@
+[gd_scene load_steps=20 format=3 uid="uid://b0sfgg6h4i27m"]
+
+[ext_resource type="Script" path="res://sprites/scripts/choose_your_player.gd" id="1_hbg6a"]
+[ext_resource type="Texture2D" uid="uid://dyjutptvj3503" path="res://Assets/Background/Background_2.png" id="2_h5hfs"]
+[ext_resource type="Texture2D" uid="uid://yh74v6w4qshi" path="res://Assets/Background/Background_1.png" id="3_bb5kf"]
+[ext_resource type="Texture2D" uid="uid://cw41pg33bemnw" path="res://Assets/Slimes/Untitled.png" id="5_pnkrh"]
+[ext_resource type="Texture2D" uid="uid://ojn77lvfw4jk" path="res://Assets/keys/ARROWRIGHT.png" id="6_1ewnp"]
+[ext_resource type="Texture2D" uid="uid://k7llcvkp4262" path="res://Assets/keys/ARROWLEFT.png" id="7_q4kr5"]
+
+[sub_resource type="Animation" id="Animation_kt2do"]
+resource_name = "Click left"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_owkxq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Arrowright:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wcwl6"]
+resource_name = "click right"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Arrowright:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6bhpi"]
+_data = {
+"Click left": SubResource("Animation_kt2do"),
+"RESET": SubResource("Animation_owkxq"),
+"click right": SubResource("Animation_wcwl6")
+}
+
+[sub_resource type="Animation" id="Animation_kaaqx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Untitled:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_8kgmn"]
+resource_name = "blue"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Untitled:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
+[sub_resource type="Animation" id="Animation_w0hj4"]
+resource_name = "cycle"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Untitled:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [8, 8, 9, 10, 11, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_jcib1"]
+resource_name = "green"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Untitled:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_vkv3q"]
+resource_name = "orange"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Untitled:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+
+[sub_resource type="Animation" id="Animation_r0fo3"]
+resource_name = "pink"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Untitled:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [17]
+}
+
+[sub_resource type="Animation" id="Animation_8v647"]
+resource_name = "purple"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Untitled:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [16]
+}
+
+[sub_resource type="Animation" id="Animation_pb6ba"]
+resource_name = "yellow"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Untitled:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rg10i"]
+_data = {
+"RESET": SubResource("Animation_kaaqx"),
+"blue": SubResource("Animation_8kgmn"),
+"cycle": SubResource("Animation_w0hj4"),
+"green": SubResource("Animation_jcib1"),
+"orange": SubResource("Animation_vkv3q"),
+"pink": SubResource("Animation_r0fo3"),
+"purple": SubResource("Animation_8v647"),
+"yellow": SubResource("Animation_pb6ba")
+}
+
+[node name="choose_your_player" type="Node2D"]
+script = ExtResource("1_hbg6a")
+
+[node name="sky" type="Sprite2D" parent="."]
+position = Vector2(576.294, 317)
+scale = Vector2(2.40441, 2.40441)
+texture = ExtResource("2_h5hfs")
+
+[node name="cloud" type="Sprite2D" parent="."]
+position = Vector2(571.294, 320)
+scale = Vector2(2.40441, 2.40441)
+texture = ExtResource("3_bb5kf")
+
+[node name="back" type="Button" parent="."]
+offset_left = 933.0
+offset_top = 549.0
+offset_right = 1127.0
+offset_bottom = 626.0
+scale = Vector2(0.995884, 0.995884)
+theme_override_font_sizes/font_size = 50
+text = "back"
+
+[node name="Select your player" type="Button" parent="."]
+offset_left = 252.0
+offset_top = 45.0
+offset_right = 694.0
+offset_bottom = 122.0
+scale = Vector2(1.41505, 1.41505)
+theme_override_font_sizes/font_size = 50
+text = "Select your player"
+
+[node name="Select" type="Button" parent="."]
+offset_left = 490.0
+offset_top = 387.0
+offset_right = 684.0
+offset_bottom = 464.0
+scale = Vector2(0.709384, 0.709384)
+theme_override_font_sizes/font_size = 50
+text = "Select"
+
+[node name="left" type="Button" parent="."]
+offset_left = 416.0
+offset_top = 380.0
+offset_right = 495.0
+offset_bottom = 476.0
+scale = Vector2(0.709384, 0.709384)
+theme_override_font_sizes/font_size = 50
+text = "
+"
+
+[node name="right" type="Button" parent="."]
+offset_left = 652.0
+offset_top = 380.0
+offset_right = 729.0
+offset_bottom = 471.0
+scale = Vector2(0.709384, 0.709384)
+theme_override_font_sizes/font_size = 50
+text = "
+"
+
+[node name="Untitled" type="Sprite2D" parent="."]
+position = Vector2(559, 260)
+texture = ExtResource("5_pnkrh")
+hframes = 4
+vframes = 7
+frame = 8
+
+[node name="Arrowright" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(678, 410)
+scale = Vector2(3.75727, 3.75727)
+texture = ExtResource("6_1ewnp")
+hframes = 3
+
+[node name="Arrowleft" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(444, 410)
+scale = Vector2(3.76, 3.76)
+texture = ExtResource("7_q4kr5")
+hframes = 3
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Arrowleft")
+libraries = {
+"": SubResource("AnimationLibrary_6bhpi")
+}
+speed_scale = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rg10i")
+}
+
+[node name="Selected" type="Button" parent="."]
+self_modulate = Color(1, 0.184314, 0, 1)
+offset_left = 475.0
+offset_top = 154.0
+offset_right = 687.0
+offset_bottom = 231.0
+rotation = 0.00800761
+scale = Vector2(0.871879, 0.871879)
+theme_override_font_sizes/font_size = 50
+text = "Selected"
+flat = true
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Select your player" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Selected" to="." method="_on_select_pressed"]

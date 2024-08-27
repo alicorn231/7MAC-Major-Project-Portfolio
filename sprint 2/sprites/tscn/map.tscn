@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://bab65gr0ys82a"]
+
+[ext_resource type="Script" path="res://sprites/scripts/map.gd" id="1_ift6g"]
+[ext_resource type="Texture2D" uid="uid://dyjutptvj3503" path="res://Assets/Background/Background_2.png" id="2_rmyko"]
+[ext_resource type="Texture2D" uid="uid://yh74v6w4qshi" path="res://Assets/Background/Background_1.png" id="3_wa2cm"]
+
+[node name="map" type="Node2D"]
+script = ExtResource("1_ift6g")
+
+[node name="sky" type="Sprite2D" parent="."]
+position = Vector2(-483.412, 223)
+scale = Vector2(2.40441, 2.40441)
+texture = ExtResource("2_rmyko")
+
+[node name="cloud" type="Sprite2D" parent="."]
+position = Vector2(-483.706, 226)
+scale = Vector2(2.40441, 2.40441)
+texture = ExtResource("3_wa2cm")
+
+[node name="level_3" type="Button" parent="."]
+offset_left = -947.707
+offset_top = 114.0
+offset_right = -685.707
+offset_bottom = 218.0
+theme_override_font_sizes/font_size = 50
+text = "level  3
+"
+
+[node name="level_2" type="Button" parent="."]
+offset_left = -291.707
+offset_top = -30.0002
+offset_right = -29.7065
+offset_bottom = 73.9998
+theme_override_font_sizes/font_size = 50
+text = "level 2"
+
+[node name="level_1" type="Button" parent="."]
+offset_left = -619.707
+offset_top = -30.0002
+offset_right = -357.707
+offset_bottom = 73.9998
+theme_override_font_sizes/font_size = 50
+text = "level 1"
+
+[node name="tutorial" type="Button" parent="."]
+offset_left = -947.707
+offset_top = -30.0003
+offset_right = -685.707
+offset_bottom = 73.9997
+scale = Vector2(0.995884, 0.995884)
+theme_override_font_sizes/font_size = 50
+text = "tutorial
+"
+
+[node name="back" type="Button" parent="."]
+offset_left = -103.707
+offset_top = 461.0
+offset_right = 90.2933
+offset_bottom = 538.0
+scale = Vector2(0.995884, 0.995884)
+theme_override_font_sizes/font_size = 50
+text = "back"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(592, 328)
+limit_left = -100
+limit_top = -100
+limit_right = 100
+limit_bottom = 100
+limit_smoothed = true
+
+[connection signal="pressed" from="level_3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="level_2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="level_1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

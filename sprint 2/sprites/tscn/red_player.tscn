@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=3 uid="uid://dfripryr246xn"]
+
+[ext_resource type="Script" path="res://sprites/scripts/red_player.gd" id="1_q0bkn"]
+[ext_resource type="Texture2D" uid="uid://bu37bif6di00e" path="res://Assets/Slimes/red_enemy.png" id="4_jkvpx"]
+
+[sub_resource type="Animation" id="Animation_vrxvm"]
+resource_name = "walk right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedEnemy3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_noqbe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedEnemy3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vykdg"]
+resource_name = "walk left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedEnemy3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [24, 25, 26, 27]
+}
+
+[sub_resource type="Animation" id="Animation_0hxdd"]
+resource_name = "die"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedEnemy3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_xeywd"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RedEnemy3:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5s7k7"]
+_data = {
+"RESET": SubResource("Animation_noqbe"),
+"die": SubResource("Animation_0hxdd"),
+"idle": SubResource("Animation_xeywd"),
+"walk left": SubResource("Animation_vykdg"),
+"walk right": SubResource("Animation_vrxvm")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjepn"]
+size = Vector2(20.2718, 16.0061)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p7qa"]
+size = Vector2(17.5926, 11.5939)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7ojw"]
+size = Vector2(24.5267, 23.7148)
+
+[node name="red_enemy" type="CharacterBody2D"]
+script = ExtResource("1_q0bkn")
+
+[node name="RedEnemy3" type="Sprite2D" parent="."]
+position = Vector2(-0.999996, -12)
+scale = Vector2(0.23465, 0.23465)
+texture = ExtResource("4_jkvpx")
+hframes = 4
+vframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5s7k7")
+}
+speed_scale = 0.5
+
+[node name="side" type="Area2D" parent="."]
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShapeSide" type="CollisionShape2D" parent="side"]
+position = Vector2(-2.5, -4)
+scale = Vector2(1.82519, 1.32267)
+shape = SubResource("RectangleShape2D_fjepn")
+
+[node name="top" type="Area2D" parent="."]
+position = Vector2(-2, 0)
+collision_layer = 255
+collision_mask = 255
+
+[node name="CollisionShapeTop" type="CollisionShape2D" parent="top"]
+position = Vector2(-0.499999, -18.6932)
+rotation = 3.14159
+scale = Vector2(1.85779, -1.26046)
+shape = SubResource("RectangleShape2D_2p7qa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -2.8792)
+scale = Vector2(1.18238, 0.937878)
+shape = SubResource("RectangleShape2D_q7ojw")
+
+[connection signal="body_entered" from="side" to="." method="_on_side_body_entered"]
+[connection signal="body_entered" from="top" to="." method="_on_top_body_entered"]
